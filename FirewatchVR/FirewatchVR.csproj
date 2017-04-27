@@ -7,8 +7,8 @@
     <ProjectGuid>{1F634B93-F4C6-45E9-894D-2F3556A74D67}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VRGIN.Template</RootNamespace>
-    <AssemblyName>VRGIN.Template</AssemblyName>
+    <RootNamespace>FirewatchVR</RootNamespace>
+    <AssemblyName>FirewatchVR</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurableContext.cs" />
+    <Compile Include="DisplacementPlugin.cs" />
+    <Compile Include="FirewatchContext.cs" />
+    <Compile Include="FirewatchInterpreter.cs" />
     <Compile Include="GenericSeatedMode.cs" />
     <Compile Include="GenericStandingMode.cs" />
     <Compile Include="VRPlugin.cs" />
@@ -67,29 +70,22 @@
       <DataFiles Include="$(OutputPath)Data\**\*" />
       <PdbFiles Include="$(OutputPath)*.pdb" />
     </ItemGroup>
-    
     <!-- Copy plugins to the right place -->
     <Move SourceFiles="@(ManagedLibs)" DestinationFolder="$(OutputPath)Plugins" />
-    
     <!-- Copy IPA -->
     <Copy SourceFiles="@(IPA)" DestinationFolder="$(OutputPath)%(RecursiveDir)" />
-
     <!-- Move Data stuff into IPA folder -->
     <Move SourceFiles="@(DataFiles)" DestinationFolder="$(OutputPath)IPA\Data\%(RecursiveDir)" />
-
     <!-- Remove unneeded directory -->
     <RemoveDir Directories="$(OutputPath)Data" />
-
     <!-- Remove PDB files -->
     <Delete Files="@(PdbFiles)" />
   </Target>
-
   <Target Name="Clean">
     <ItemGroup>
-      <_FilesToDelete Include="$(OutputPath)**\*"/>
-      <_FoldersToDelete Include="$(OutputPath)*\"/>
+      <_FilesToDelete Include="$(OutputPath)**\*" />
+      <_FoldersToDelete Include="$(OutputPath)*\" />
     </ItemGroup>
-    <RemoveDir Directories="$(OutputPath)"/>
+    <RemoveDir Directories="$(OutputPath)" />
   </Target>
-  
 </Project>

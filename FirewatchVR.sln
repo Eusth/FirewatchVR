@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRGIN.Template", "VRGIN.Template\VRGIN.Template.csproj", "{1F634B93-F4C6-45E9-894D-2F3556A74D67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirewatchVR", "FirewatchVR\FirewatchVR.csproj", "{1F634B93-F4C6-45E9-894D-2F3556A74D67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRGIN", "VRGIN\VRGIN\VRGIN.csproj", "{22788A2C-7695-4A6A-A9F0-115AB9A05FD4}"
 EndProject

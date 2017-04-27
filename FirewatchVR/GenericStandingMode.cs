@@ -7,20 +7,15 @@ using VRGIN.Core;
 using VRGIN.Helpers;
 using VRGIN.Modes;
 
-namespace VRGIN.Template
+namespace FirewatchVR
 {
-    class GenericSeatedMode : SeatedMode
+    class GenericStandingMode : StandingMode
     {
         protected override IEnumerable<IShortcut> CreateShortcuts()
         {
             return base.CreateShortcuts().Concat(new IShortcut[] {
-                new MultiKeyboardShortcut(new KeyStroke("Ctrl+C"), new KeyStroke("Ctrl+C"), () => { VR.Manager.SetMode<GenericStandingMode>(); })
+                new MultiKeyboardShortcut(new KeyStroke("Ctrl+C"), new KeyStroke("Ctrl+C"), () => { VR.Manager.SetMode<GenericSeatedMode>(); })
             });
-        }
-
-        protected override void ChangeModeOnControllersDetected()
-        {
-            VR.Manager.SetMode<GenericStandingMode>();
         }
     }
 }
