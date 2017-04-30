@@ -9,9 +9,5 @@ namespace FirewatchVR
 {
     class FirewatchInterpreter : GameInterpreter
     {
-        public override bool IsIgnoredCanvas(Canvas canvas)
-        {
-            return base.IsIgnoredCanvas(canvas) || ((1 << canvas.gameObject.layer) & VR.Context.UILayerMask) == 0;
-        }
     }
 }
