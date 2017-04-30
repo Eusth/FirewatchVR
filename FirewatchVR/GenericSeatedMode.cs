@@ -26,6 +26,12 @@ namespace FirewatchVR
         {
         }
 
+        protected override void OnUpdate()
+        {
+            base.OnUpdate();
+            VR.Camera.Origin.position += VR.Camera.Origin.forward * 0.2f;
+        }
+
         /// <summary>
         /// Uncomment to automatically switch into Standing Mode when controllers have been detected.
         /// </summary>
